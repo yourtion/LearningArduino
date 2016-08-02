@@ -1,3 +1,4 @@
+// 物理连接
 int a = 7;
 int b = 6;
 int c = 5;
@@ -7,119 +8,127 @@ int f = 8;
 int g = 9;
 int dp = 4;
 
+// 清除显示
+void clean(void) {
+  int j;
+  for (j = 4; j <= 11; j++) {
+    digitalWrite(j, HIGH);
+  }
+}
+
 //显示数字 1
 void digital_1(void) {
-  unsigned char j;
+  clean();
+
   digitalWrite(c, LOW); //给数字 5 引脚低电平,点亮 c 段
   digitalWrite(b, LOW); //点亮 b 段
-  for ( j = 7; j <= 11; j++) //熄灭其余段
-    digitalWrite( j, HIGH); digitalWrite(dp, HIGH); //熄灭小数点 DP 段
 }
+
 //显示数字 2
 void digital_2(void) {
-  unsigned char j;
-  digitalWrite(b, LOW);
+  clean();
+
   digitalWrite(a, LOW);
-  for ( j = 9; j <= 11; j++) {
-    digitalWrite( j, LOW);
-  }
-  digitalWrite(dp, HIGH);
-  digitalWrite(c, HIGH);
-  digitalWrite(f, HIGH);
+  digitalWrite(b, LOW);
+  digitalWrite(d, LOW);
+  digitalWrite(e, LOW);
+  digitalWrite(g, LOW);
 }
 
 //显示数字 3
 void digital_3(void) {
-  unsigned char j;
-  digitalWrite(g, LOW);
+  clean();
+
+  digitalWrite(a, LOW);
+  digitalWrite(b, LOW);
+  digitalWrite(c, LOW);
   digitalWrite(d, LOW);
-  for ( j = 5; j <= 7; j++) {
-    digitalWrite( j, LOW);
-  }
-  digitalWrite(dp, HIGH);
-  digitalWrite(f, HIGH);
-  digitalWrite(e, HIGH);
+  digitalWrite(g, LOW);
 }
 
 //显示数字 4
 void digital_4(void) {
-  digitalWrite(c, LOW);
+  clean();
+
   digitalWrite(b, LOW);
+  digitalWrite(c, LOW);
   digitalWrite(f, LOW);
   digitalWrite(g, LOW);
-  digitalWrite(dp, HIGH);
-  digitalWrite(a, HIGH);
-  digitalWrite(e, HIGH);
-  digitalWrite(d, HIGH);
 }
+
 //显示数字 5
 void digital_5(void) {
-  unsigned char j;
-  for ( j = 7; j <= 9; j++) {
-    digitalWrite( j, LOW);
-  } digitalWrite(c, LOW);
+  clean();
+
+  digitalWrite(a, LOW);
+  digitalWrite(c, LOW);
   digitalWrite(d, LOW);
-  digitalWrite(dp, HIGH);
-  digitalWrite(b, HIGH);
-  digitalWrite(e, HIGH);
+  digitalWrite(f, LOW);
+  digitalWrite(g, LOW);
 }
+
 //显示数字 6
 void digital_6(void) {
-  unsigned char j;
-  for ( j = 7; j <= 11; j++) {
-    digitalWrite( j, LOW);
-  }
+  clean();
+
+  digitalWrite(a, LOW);
   digitalWrite(c, LOW);
-  digitalWrite(dp, HIGH);
-  digitalWrite(b, HIGH);
+  digitalWrite(d, LOW);
+  digitalWrite(e, LOW);
+  digitalWrite(f, LOW);
+  digitalWrite(g, LOW);
 }
+
 //显示数字 7
 void digital_7(void) {
-  unsigned char j;
-  for ( j = 5; j <= 7; j++) {
+  clean();
 
-    digitalWrite( j, LOW);
-  }
-  digitalWrite(dp, HIGH);
-  for ( j = 8; j <= 11; j++) {
-    digitalWrite( j, HIGH);
-  }
+  digitalWrite(a, LOW);
+  digitalWrite(b, LOW);
+  digitalWrite(c, LOW);
 }
+
 //显示数字 8
 void digital_8(void) {
-  unsigned char j;
-  for ( j = 5; j <= 11; j++) {
-    digitalWrite( j, LOW);
-  }
-  digitalWrite(dp, HIGH);
+  clean();
+
+  digitalWrite(a, LOW);
+  digitalWrite(b, LOW);
+  digitalWrite(c, LOW);
+  digitalWrite(d, LOW);
+  digitalWrite(e, LOW);
+  digitalWrite(f, LOW);
+  digitalWrite(g, LOW);
 }
 
 //显示数字 9
 void digital_9(void) {
-  unsigned char j;
-  for ( j = 5; j < 11; j++) {
-    digitalWrite( j, LOW);
-  }
-  digitalWrite(e, HIGH);
-  digitalWrite(dp, HIGH);
+  clean();
+
+  digitalWrite(a, LOW);
+  digitalWrite(b, LOW);
+  digitalWrite(c, LOW);
+  digitalWrite(d, LOW);
+  digitalWrite(f, LOW);
+  digitalWrite(g, LOW);
 }
 
 //显示数字 0
 void digital_0(void) {
-  unsigned char j;
-  for ( j = 5; j <= 11; j++) {
-    digitalWrite( j, LOW);
-  }
-  digitalWrite(g, HIGH);
-  digitalWrite(dp, HIGH);
+  clean();
+
+  digitalWrite(a, LOW);
+  digitalWrite(b, LOW);
+  digitalWrite(c, LOW);
+  digitalWrite(d, LOW);
+  digitalWrite(e, LOW);
+  digitalWrite(f, LOW);
 }
 
 //显示小数点
 void digital_dp(void) {
-  unsigned char j;
-  for ( j = 4; j <= 11; j++) {
-    digitalWrite( j, HIGH);
-  }
+  clean();
+
   digitalWrite(dp, LOW);
 }
 
