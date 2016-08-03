@@ -19,7 +19,7 @@ void loop() {
 
   // send data only when you receive data:
   if (Serial.available() > 0) {
-    str = Serial.readStringUntil('\r');
+    str = Serial.readStringUntil('\n');
     lcd.clear();
     lcd.println(str);
   }
